@@ -10,7 +10,7 @@ export class FlightsController {
 
   // CREATE
   @Post()
-  async create(@Body() flight: Flight): Promise<Flights[]> {
+  async create(@Body() flight: Flight): Promise<Flights> {
     return this.flightService.create(flight);
   }
 
@@ -18,6 +18,16 @@ export class FlightsController {
   @Get()
   findAll(): Promise<Flights[]> {
     return this.flightService.findAll();
+  }
+
+  @Get("cities/origins")
+  getOrigins(): Promise<String[]> {
+    return this.flightService.getFlightOrigins();
+  }
+
+  @Get("cities/destinations")
+  getDestinations(): Promise<String[]> {
+    return this.flightService.getFlightDestinations();
   }
 
   // QUERY
