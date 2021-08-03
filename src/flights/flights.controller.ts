@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Param, Body, Put, Delete, Patch } from '@nestjs/common';
 import { FlightsService } from './flights.service';
 import { Flights } from './flights.entity';
-import { Flight } from './flight.model';
+import { Flight } from './flights.model';
 import { identity } from 'rxjs';
 
 @Controller('flights')
